@@ -18,7 +18,7 @@ namespace EmployeeRegister
 
         public override string ToString()
         {
-            var s = "Name: " + Name + "Salary :"+ Salary;
+            var s = "Name: " + Name + "  Salary :"+ Salary;
             return s;
         }
 

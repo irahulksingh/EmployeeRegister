@@ -23,11 +23,27 @@ namespace EmployeeRegister
             //throw new NotImplementedException();
             foreach(var employee in list)
             {
-                Console.WriteLine("Name: " + employee.Name);
-                Console.WriteLine("Salary: " + employee.Salary);
-                Console.WriteLine(); ;
+                //Console.WriteLine("Name: " + employee.Name);
+                //Console.WriteLine("Salary: " + employee.Salary);
+                Console.WriteLine(employee); ;
 
             }
+        }
+
+        public override string ToString()
+         {
+            var output = "";
+            //throw new NotImplementedException();
+            foreach (var employee in list)
+            {
+                //Console.WriteLine("Name: " + employee.Name);
+                //Console.WriteLine("Salary: " + employee.Salary);
+                //Console.WriteLine(employee); ;
+
+                output += employee + "\n";
+
+            }
+            return output;
         }
     }
 }
