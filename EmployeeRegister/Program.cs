@@ -29,9 +29,14 @@ namespace EmployeeRegister
                     break;
                 }
                 Console.Write("Salary :");
-                var salary = Console.ReadLine();
+                string salaryStr = Console.ReadLine();
 
-                var salaryInt = int.Parse(salary);
+                int salaryInt = 0;
+                    if(int.TryParse(salaryStr,out salaryInt))
+                {
+
+                    Console.WriteLine("Salary coudn't be parsed");
+                }
                 var employee = new Employee(name);
                 employee.Salary = salaryInt;
 
