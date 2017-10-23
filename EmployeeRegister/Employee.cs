@@ -16,5 +16,11 @@ namespace EmployeeRegister
         public string Name{ get; set; }
         public int  Salary { get; set; }
 
+        public override string ToString()
+        {
+            var s = "Name: " + Name + "Salary :"+ Salary;
+            return s;
+        }
+
     }
 }
