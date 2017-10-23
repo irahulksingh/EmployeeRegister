@@ -19,47 +19,44 @@ namespace EmployeeRegister
             //Console.WriteLine("Salary: "+ e.Salary);
 
             var registry = new Register();
+            var added = true;
 
             do
             {
-                Console.Write("Name: ");
-                var name = Console.ReadLine();
-                if (String.IsNullOrWhiteSpace(name))
-                {
-                    break;
-                }
-                Console.Write("Salary :");
-                string salaryStr = Console.ReadLine();
+                added = AddEmployee(registry);
 
-                int salaryInt = 0;
-                    if(int.TryParse(salaryStr,out salaryInt))
-                {
+            } while (added);
 
-                    Console.WriteLine("Salary coudn't be parsed");
-                }
-                var employee = new Employee(name);
-                employee.Salary = salaryInt;
-
-
-                registry.Add(employee);
-            } while (true);
-
-    {
-
-                registry.List();
-
-            }
-
-
-
-            
+            Console.WriteLine("================");
+            registry.List();
 
 
 
         }
 
+        private static bool AddEmployee(Register Registry)
 
+        {
+            Console.Write("Name: ");
+            var name = Console.ReadLine();
+            if (String.IsNullOrWhiteSpace(name)) return false
+                    ;
 
+            Console.Write("Salary :");
+            string salaryStr = Console.ReadLine();
 
+            int salaryInt = 0;
+            if (!int.TryParse(salaryStr, out salaryInt))
+            {
+
+                Console.WriteLine("Salary coudn't be parsed");
+            }
+            var employee = new Employee(name);
+            employee.Salary = salaryInt;
+            Registry.Add(employee);
+
+            return true;
+
+        }
     }
 }
